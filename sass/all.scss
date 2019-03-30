@@ -1,0 +1,1036 @@
+//@font-face {
+//  font-family: 'Montserrat';
+//  src: url('../assets/fonts/webfontkit-20190226-162237/montserrat-regular-webfont.woff') format('woff'),
+//  url('../assets/fonts/webfontkit-20190226-162237/montserrat-regular-webfont.woff2') format('woff2');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
+
+/* THIS IS PEYTON'S STYLES */
+
+$break-small: 950px;
+
+
+#checkedOutList {
+  margin-top: 30px;
+}
+
+#contact {
+  cursor: pointer;
+}
+
+
+//profile styling
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    list-style-type: none;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li.finished {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+*{
+  margin: 0;
+}
+
+html,body{
+  height: 100%;
+  min-width:840px;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  height: 100%;
+  min-width:840px;
+}
+
+//====================================================
+//================= DEFINE NAV =======================
+//====================================================
+
+nav{
+  width: 100%;
+  height: 75px;
+  //background-color: white;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  transition: background-color 0.4s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .websiteTitle {
+    height: 75px;
+    min-width:290px;
+    line-height: 75px;
+    letter-spacing: 1px;
+    font-size: 22px;
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    color:transparent;
+    padding-left:70px;
+  }
+
+  .linkWrap{
+    height: 75px;
+    width: 500px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media screen and (max-width: 1010px) {
+      display: none;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+
+    &:hover{
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid #b38e53;
+    }
+  }
+}
+
+.nav.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.3);
+  .websiteTitle {
+    color: #16194B;
+  }
+  .linkWrap {
+    a {
+      color: #16194B !important;
+    }
+  }
+  .hamburgerMenu {
+    span {
+      color: #16194B !important;
+    }
+  }
+}
+
+.nav.modal {
+  background-color: #16194B;
+  .websiteTitle {
+    color: white;
+  }
+  .linkWrap {
+    a {
+      color: white !important;
+    }
+  }
+}
+
+.hamburgerMenu {
+  display: none;
+  height: 75px;
+  width: 50%;
+
+  span {
+    color: white;
+    font-size: 36px;
+    float: right;
+    padding:20px 50px;
+    box-sizing: border-box;
+    height:75px;
+  }
+
+  ul {
+    list-style: none;
+    width:150px;
+    margin-top:75px;
+    margin-right:-400.75px;
+    transition: margin 1s ease-in-out;
+    padding-right:50px;
+    float: right;
+    text-align: right;
+    background-color: white;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.3);
+
+
+    //@media screen and (max-width: 1010px) {
+    //  display: none;
+    //}
+  }
+
+  li {
+    background-color: white;
+
+    a {
+      display: inline-block;
+      color:#16194B;
+    }
+  }
+
+  @media screen and (max-width: 1010px) {
+    display: block;
+  }
+}
+
+#adminPage {
+  border: 1px solid black;
+
+  th, td{
+    padding: 5px;
+    text-align: left;
+  }
+}
+
+//====================================================
+//================= DEFINE FORMS =====================
+//====================================================
+
+#formStyle {
+  input{
+    border-bottom: 1px solid #7a0026;
+    color: #7a0026;
+    margin: 3px;
+    padding: 3px;
+
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  textarea{
+    border: 1px solid #7a0026;
+    border-radius: 5px;
+    color: #7a0026;
+    margin: 3px;
+    padding: 3px;
+    font-size: 12px;
+
+  }
+
+  input[type=button], input[type=submit], input[type=reset]{
+    background-color: #7a0026;
+    width: 25%;
+    border: none;
+    color: #ffffff;
+  }
+}
+
+#formButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+//======================================================
+//========================= HOME =======================
+//======================================================
+
+#homeSection{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+
+  @media screen and (max-width: 1010px) {
+    height:150%;
+    flex-direction: column-reverse;
+  }
+
+  .homeLeft {
+    height:100%;
+    width:45%;
+    background-image: url("../assets/images/benjaminHarrisonPortrait.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column-reverse;
+
+    img{
+      width:175px;
+      margin:0 0 150px 50px;
+
+      @media screen and (max-width: 1010px) {
+        margin:0 0 50px 50px;
+      }
+    }
+
+    @media screen and (max-width: 1010px) {
+      height:33%;
+      width:100%;
+      background-position: top;
+    }
+  }
+
+  .homeRight {
+    height:100%;
+    width:55%;
+
+    @media screen and (max-width: 1010px) {
+      height:67%;
+      width:100%;
+    }
+
+    .homeQuarterImage {
+      height:50%;
+      width:100%;
+      background-image: url("../assets/images/harrisonMiniature.jpg");
+      background-size: cover;
+      background-position: top;
+
+      .homeQuarterImageOverlay {
+        height: 100%;
+        width:100%;
+        background-color: rgba(22,25,75,.6);
+        padding: 0 50px 15px 50px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        font-family: "PT Serif", serif;
+        color: white;
+        font-size: 36px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .homeQuestionWrapper {
+      height:50%;
+      width:100%;
+      //background-color: #16194B;
+      display: flex;
+
+      @media screen and (max-width: 1010px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.questions {
+  padding: 30px 50px 25px 30px;
+  box-sizing: border-box;
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color:#16194B;
+
+  font-family: "PT Serif", serif;
+
+  @media screen and (max-width: 1010px) {
+    flex-direction: row;
+    width:100%;
+  }
+
+  .question {
+    height:48px;
+    max-width:100px;
+    padding-left:20px;
+    box-sizing: border-box;
+    //background-color: #8E0A3B;
+    cursor:pointer;
+  }
+}
+
+#answer {
+  width:100%;
+  margin: 0 auto;
+  padding: 40px 50px 0 0;
+  box-sizing: border-box;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #16194B;
+
+  @media screen and (max-width: 1010px) {
+    padding: 0 50px 50px 50px;
+  }
+}
+
+//#calloutVideo{
+//  width: 750px;
+//  height: 420px;
+//  display: block;
+//}
+
+//===========================================================
+//============== PRINTING & INSTRUCTIONS ====================
+//===========================================================
+
+#printingWrapper {
+  height:100%;
+  width:100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+//.printingWrapper {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  justify-content: center;
+//  padding:20px;
+//  background-color: #916E2C;
+//}
+
+#api-frame {
+  //padding-top:75px;
+  //box-sizing: border-box;
+  width: 55%;
+  height: 100%;
+  background-image: radial-gradient(#A5A5A5, #454545);
+  display: block;
+}
+
+.api_detail_wrapper {
+  //padding-top:75px;
+  //box-sizing: border-box;
+  width: 45%;
+  height: 100%;
+  color: #313326;
+}
+
+//====================================================
+//============== CONTRIBUTORS ========================
+//====================================================
+
+#contributorWrapper {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #16194B;
+
+  #contributorTitle {
+    height: 300px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    h1 {
+      font-family: "PT Serif", serif;
+      font-weight: 400;
+      font-size: 56px;
+      letter-spacing: 3px;
+    }
+  }
+  //#contributorContent {
+  //  height:400px;
+  //  width:100%;
+  //}
+}
+
+//====================================================
+//============== COLLABORATORS ====================
+//====================================================
+
+#collaboratorWrapper {
+  width: 100%;
+  min-height: 200px;
+  padding-top:30px;
+  //background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #16194B;
+
+  #collaboratorTitle {
+    height: 60px;
+    width: 750px;
+    margin-bottom:30px;
+
+    h1 {
+      float: left;
+      line-height: 60px;
+      font-family: "PT Serif", serif;
+      font-weight: 400;
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
+  }
+
+  #collaboratorContent {
+    width: 750px;
+    height: 150px;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+
+//=======================================================
+//=================== REGISTER MODAL ====================
+//=======================================================
+
+//register styles
+.registerModal {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //display: flex;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .registerForm {
+    z-index: 99;
+    background-color: #fff;
+    width: 50%;
+    min-height: 50%;
+
+    .regHeader {
+      width: 100%;
+      font-family: "PT Serif", serif;
+      font-size: 24px;
+      color: #16194B;
+
+      padding: 15px 30px 0 30px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .closeWrap {
+      padding-left: 30px;
+      cursor: pointer;
+      .regClose {
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+    .regForm {
+      padding: 0 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        display: block;
+        margin: 10px 0 5px 0;
+      }
+      .errDiv{
+        color: red;
+        font-family: pf_fusion_sans_proheavy, sans-serif;
+        font-size: 80%;
+      }
+      input {
+        display: block;
+        height: 40px;
+        width: 100%;
+        border: 2px solid #b38e53;
+        margin-bottom: 20px;
+        color: #16194B;
+        font-family: "Montserrat", sans-serif;
+        font-size:16px;
+        letter-spacing: 1px;
+        padding:5px 15px;
+        box-sizing: border-box;
+      }
+
+      .regSubmit {
+        width: 100%;
+        height:40px;
+        border: 2px solid #b38e53;
+        background-color: #b38e53;
+        color: #16194B;
+        cursor: pointer;
+        margin-top: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size:20px;
+      }
+
+      }
+    }
+  }
+
+//====================================================
+//=================== LOGIN MODAL ====================
+//====================================================
+
+
+.loginModal {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //display: flex;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .loginForm {
+    z-index: 99;
+    background-color: #fff;
+    width: 50%;
+    min-height: 50%;
+
+    .liHeader {
+      width: 100%;
+      font-family: "PT Serif", serif;
+      font-size: 24px;
+      color: #16194B;
+
+      padding: 15px 30px 0 30px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .closeWrap {
+      padding-left: 30px;
+      cursor: pointer;
+      .liClose {
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+
+    .liForm {
+      padding: 0 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        display: block;
+        margin: 10px 0 5px 0;
+      }
+
+      input {
+        display: block;
+        height: 40px;
+        width: 100%;
+        border: 2px solid #b38e53;
+        margin-bottom: 20px;
+        color: #16194B;
+        font-family: "Montserrat", sans-serif;
+        font-size:16px;
+        letter-spacing: 1px;
+        padding:5px 15px;
+        box-sizing: border-box;
+
+      }
+
+      .loginSubmit {
+        width: 100%;
+        height:40px;
+        border: 2px solid #b38e53;
+        background-color: #b38e53;
+        color: #16194B;
+        cursor: pointer;
+        margin-top: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size:20px;
+      }
+
+      .errDiv{
+        color: red;
+        font-family: pf_fusion_sans_proheavy, sans-serif;
+        font-size: 80%;
+      }
+
+    }
+
+  }
+
+}
+
+.forgotButton {
+  color: #16194B;
+  font-family: "PT Serif", serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+}
+
+//forgot modal styles
+
+
+
+.forgotModal {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //display: flex;
+  visibility: hidden;
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  .forgotForm {
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    min-height: 50%;
+    border-radius: 20px;
+
+    .forgotHeader {
+      //background-color: aquamarine;
+      //border-radius: 20px 20px 0 0;
+      border-bottom: solid 1px #888;
+      padding: 15px 15px 0 15px;
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .errDiv{
+      color: red;
+      font-family: pf_fusion_sans_proheavy, sans-serif;
+      font-size: 80%;
+    }
+
+
+    .closeWrap {
+      cursor: pointer;
+      .forgotClose {
+
+      }
+    }
+
+    .forForm {
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        display: block;
+        margin: 10px 0 5px 0;
+      }
+
+      input {
+        display: block;
+        width: 80%;
+        height: 30px;
+        border: 1px solid #7a0026;
+        border-radius: 5px;
+        color: #7a0026;
+      }
+
+      .forgotSub {
+        display: inline-block;
+        border: none;
+        margin-top: 20px;
+        height: 50px;
+        width: 30%;
+      }
+
+      .reset {
+        display: inline-block;
+        border: none;
+        margin-top: 20px;
+        height: 50px;
+        width: 30%;
+      }
+
+    }
+
+  }
+
+}
+
+
+//====================================================
+//=================== CONTACT MODAL ==================
+//====================================================
+
+.contactModal {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //display: flex;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .contactForm {
+    z-index: 99;
+    //background-color: green;
+    width: 50%;
+    max-height: 75%;
+    min-height: 50%;
+
+    .contactHeader {
+      font-family: "PT Serif", serif;
+      font-size: 24px;
+      color: #16194B;
+
+      padding: 15px 30px 0 30px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .closeWrap {
+      cursor: pointer;
+      .conClose {
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+
+    .errDiv{
+      color: red;
+      font-family: pf_fusion_sans_proheavy, sans-serif;
+      font-size: 80%;
+    }
+
+    .conForm {
+      padding: 0 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        display: block;
+        margin: 10px 0 5px 0;
+      }
+
+      input {
+        display: block;
+        height: 40px;
+        width: 100%;
+        border: 2px solid #b38e53;
+        margin-bottom: 20px;
+        color: #16194B;
+        font-family: "Montserrat", sans-serif;
+        font-size:16px;
+        letter-spacing: 1px;
+        padding:5px 15px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        border: 2px solid #b38e53;
+        color: #16194B;
+        font-family: "Montserrat", sans-serif;
+        font-size:16px;
+        padding:5px 15px;
+        box-sizing: border-box;
+
+      }
+
+      .conSubmit {
+        width: 100%;
+        height:40px;
+        border: 2px solid #b38e53;
+        background-color: #b38e53;
+        color: #16194B;
+        cursor: pointer;
+        margin-top: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size:20px;
+      }
+
+      .contactSub {
+        display: inline-block;
+        border: none;
+        margin-top: 20px;
+        height: 50px;
+        width: 30%;
+      }
+
+      .reset {
+        display: inline-block;
+        border: none;
+        margin-top: 20px;
+        height: 50px;
+        width: 30%;
+      }
+
+    }
+
+  }
+
+}
+
+//====================================================
+//=================== PROFILE MODAL ==================
+//====================================================
+
+.profileModal {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //display: flex;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    //background-color: white;
+  }
+
+  .proContent {
+    position: absolute;
+    z-index: 50;
+    width: 50%;
+    min-height: 50%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .profileHeader {
+      background-color: aquamarine;
+      //border-radius: 20px 20px 0 0;
+      border-bottom: solid 1px #888;
+      padding: 15px 15px 0 15px;
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
+    .closeWrap {
+      cursor: pointer;
+      .proClose {
+
+      }
+    }
+
+
+    .modalContent {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
+}
+
+#profileDetails {
+  padding: 10px;
+}
+
+#checkoutbutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  input[type=button], input[type=submit]{
+    background-color: #7a0026;
+    width: 15%;
+    border: none;
+    color: #ffffff;
+}
+}

@@ -1,0 +1,99 @@
+#profileWrapper {
+  margin-top: 60px;
+  padding: 10px;
+
+  .nothingRented {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .proContent {
+
+    .profileChecklist {
+      padding: 0 20px !important;
+      margin-top: 30px;
+    }
+
+    .profileButtons {
+      display: flex;
+      flex-direction: row;
+      padding: 0 20px;
+      margin-top: 25px;
+
+      .profileReturnWrapper {
+
+      }
+
+      .downloadButtonWrapper {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+
+.profileReturn {
+
+  cursor: pointer;
+
+  width: 180px;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7A0026;
+  border: 1px #7A0026 solid;
+
+  -webkit-transition: background-color .7s, color .7s; /* For Safari 3.1 to 6.0 */
+  transition: background-color .7s, color .7s;
+
+  &:hover {
+    background-color: white;
+    color: #7A0026;
+  }
+
+}
+
+
+.downloadButton {
+
+	 cursor: pointer;
+
+  width: 180px;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7A0026;
+  border: 1px #7A0026 solid;
+
+  -webkit-transition: background-color .7s, color .7s; /* For Safari 3.1 to 6.0 */
+  transition: background-color .7s, color .7s;
+
+  &:hover {
+    background-color: white;
+    color: #7A0026;
+
+    a {
+    	color: $main-red;
+    }
+  }
+
+  a {
+  	text-decoration: none;
+  	color: white;
+
+  	-webkit-transition: background-color .7s, color .7s; /* For Safari 3.1 to 6.0 */
+  	transition: background-color .7s, color .7s;
+
+  	&:hover {
+  		color: $main-red;
+  	}
+
+  }
+
+}

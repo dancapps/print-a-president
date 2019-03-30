@@ -1,0 +1,118 @@
+
+
+.api_detail_section {
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 25px;
+
+  .checkoutButtonWrapper {
+    //display: flex;
+    //justify-content: center;
+    width: 100%;
+
+    .checkoutButton {
+      display: none;
+
+      width: 80%;
+      height: 40px;
+      margin:0 auto;
+      color: #16194B;
+
+      justify-content: center;
+      align-items: center;
+
+      text-decoration: none;
+
+      border: 1px #16194B solid;
+      -webkit-transition: background-color .3s, border .3s; /* For Safari 3.1 to 6.0 */
+      transition: background-color .3s, border .3s;
+
+
+
+      &:hover {
+        background-color: #16194B;
+        color:white;
+      }
+    }
+  }
+
+  .messages {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+
+    color: #8E0A3B;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .rules {
+    width:80%;
+    //background-color:white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #16194B;
+    margin:20px 0 20px 0;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .rule {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 16px;
+
+    }
+
+    .ruleTitle {
+      font-family: 'PT Serif', serif;
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+
+  .backButtonLocation {
+    //display: flex;
+    //justify-content: center;
+    width: 100%;
+
+    .api_back_button {
+
+      width: 80%;
+      height: 40px;
+      margin:0 auto;
+      color: #16194B;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-decoration: none;
+
+      border: 1px #16194B solid;
+      -webkit-transition: background-color .3s, border .3s; /* For Safari 3.1 to 6.0 */
+      transition: background-color .3s, border .3s;
+
+
+
+      &:hover {
+        background-color: #16194B;
+        color:white;
+      }
+    }
+  }
+}
+
+
+
+
+

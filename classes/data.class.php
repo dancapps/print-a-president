@@ -176,9 +176,9 @@ class getData extends Connection {
 
 	}
 
-	public function updateFinishedPiece($userId, $step_end_date){
+	public function updateFinishedPiece($userId, $finishedDate){
 
-		$sql = "UPDATE pieces SET checked_out = 'false', checked_id = NULL, checkOutDate = '', finished = 'true', finished_id = '$userId', step_end_date = '$step_end_date' WHERE checked_id = '$userId'";
+		$sql = "UPDATE pieces SET checked_out = 'false', checked_id = NULL, finished = 'true', finished_id = $userId, finishedDate = $finishedDate WHERE checked_id = $userId";
 
 
 		$query = $this->conn->query($sql);

@@ -217,10 +217,11 @@ function initButtons(lastId){
 
 			//here is where we are going to update the piece and move the checkedout to finished
 			$.ajax({
+				type: 'GET',
 				url: update_finished_piece_url,
 				data: {
 					userId: currentUserId,
-					step_end_date: currentDate
+					finishedDate: currentDate
 				},
 				success: function(result){
 					

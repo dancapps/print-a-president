@@ -1,10 +1,10 @@
 <?php
 
 //Blake: Laptop
-//define("ABSOLUTE_PATH", "C:/wamp/www/print-a-president");
+//define("ABSOLUTE_PATH", "C:/wamp/www/printapresident");
 
 //Blake: Laptop
-//define("URL_ROOT", "http://localhost/print-a-president");
+//define("URL_ROOT", "http://localhost/printapresident");
 
 //Peyton: Laptop
 define("URL_ROOT", "http://localhost/print-a-president");

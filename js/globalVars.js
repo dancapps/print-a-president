@@ -4,8 +4,9 @@
 //mostly urls for ajax calls so far but for whatever
 
 //Blake: Laptop Base
-let base = 'http://localhost/print-a-president';
+//let base = 'http://localhost/printapresident';
 
+let base = 'http://localhost/print-a-president';
 
 export const checkout_piece_url = base + '/ajax/checkoutPiece.php';
 

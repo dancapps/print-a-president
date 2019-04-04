@@ -13,7 +13,10 @@ let loggedIn;
 function setModals() {
     let btnID;
 
-    $("body nav span a").click(function(e){
+    console.log('setModals')
+
+    $(".anchor").click(function(e){
+        console.log('clicked on setModals');
         btnID = this.id;
         console.log(this.id);
 
@@ -114,27 +117,6 @@ function setModals() {
     });
 }
 
-function setScroll(){
-
-    //scroll to location clicked
-    $("nav .linkWrap a").click(function(e){
-
-        let _btnID = this.id;
-
-        $('html, body').animate({
-            scrollTop:$("#" + _btnID + "Section").offset().top
-        },2000);
-    });
-
-    //scroll back to the top
-    $(".scrollTop").click(function(e){
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: 0
-        }, 2000);
-    });
-}
-
 function navScroll() {
     // console.log('running');
     $(document).scroll(function () {
@@ -143,15 +125,7 @@ function navScroll() {
     });
 }
 
-// function navScroll() {
-//     // console.log('running');
-//     $(document).scroll(function () {
-//         let $nav = $(".nav");
-//         let $anchor = $(".anchor");
-//         $nav.css("background-color", "white", $(this).scrollTop() > $nav.height());
-//         $anchor.css("color", "#16194B", $(this).scrollTop() > $nav.height());
-//     });
-// }
+
 
 function showAnswer() {
     console.log('running');
@@ -238,8 +212,8 @@ function hamburgerFunc() {
 
 
 $(document).ready(function(){
+    console.log('page is ready');
     setModals();
-    setScroll();
     navScroll();
     showAnswer();
     hamburgerFunc();
